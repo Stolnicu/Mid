@@ -22,7 +22,7 @@ if a < b:
 else:
     print(d)
 
-if a ==1
-    print(a)
-else:
-    a = 2
+# if a ==1
+#     print(a)
+# else:
+#     a = 2
