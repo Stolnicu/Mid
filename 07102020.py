@@ -31,5 +31,3 @@ variable_number_1 = 3 - 2j
 print(variable_number_1.real)
 print(variable_number_1.imag)
 print(variable_number_1.conjugate())
-
-
