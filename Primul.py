@@ -1,0 +1,1 @@
+print('Acesta este primul meu mesaj')
