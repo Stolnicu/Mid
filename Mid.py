@@ -31,7 +31,6 @@ for patch in patches:
     print(string)
 # inlocuire(string, "King", start_index=int(input('Indexul de pornire: ')), end_index=int(input('Indexul de sfarsit: ')))
 
- 
 
 # Problema 2
 
