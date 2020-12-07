@@ -2,7 +2,27 @@ from collections import Counter  # pentru Problema 2
 
 # Problema 1
 
+string = "The Inquisitor must meet Varric on top of Skyhold's battlements to be introduced."
 
+# [start, end, text]
+
+patches = [[5, 14, "Conquistador"], [26, 31, "King"], [43, 49, "Palace"]]
+
+def inlocuire(string, newstring, index, nofail=False):
+    # raise an error if index is outside of the string
+    if not nofail and index not in range(len(string)):
+        raise ValueError("index outside given string")
+
+    # if not error, but the index is still not in the correct range
+    if index < 0:  # add it to the beginning
+        return newstring + string
+
+    if index > len(string):  # add it to the end
+        return string + newstring
+
+    # insert the new string between "slices" of the original
+    return string[:start_index] + newstring + string[end_index:]
+ 
 
 # Problema 2
 
