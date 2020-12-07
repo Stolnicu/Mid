@@ -8,9 +8,11 @@ string = "The Inquisitor must meet Varric on top of Skyhold's battlements to be 
 
 patches = [[5, 14, "Conquistador"], [26, 31, "King"], [43, 49, "Palace"]]
 
+
 def inlocuire(oldstring, newstring, start_index, end_index, nofail=False):
     # raise an error if index is outside of the string
-    if not nofail and start_index and end_index not in range(len(oldstring)):
+    # print(nofail, oldstring, start_index, end_index, range(len(oldstring)))
+    if not nofail and int(start_index) and int(end_index) not in range(len(oldstring)):
         raise ValueError("index outside given string")
 
     # if not error, but the index is still not in the correct range
@@ -21,10 +23,13 @@ def inlocuire(oldstring, newstring, start_index, end_index, nofail=False):
         return oldstring + newstring
 
     # insert the new string between "slices" of the original
-    return oldstring[:start_index] + newstring + oldstring[end_index:]
+    return oldstring.replace(oldstring[start_index - 1:end_index - 1], newstring)
 
 
-inlocuire(string(), "King", start_index=input('Indexul de pornire: '), end_index=input('Indexul de sfarsit: '))
+for patch in patches:
+    string = inlocuire(string, patch[2], patch[0], patch[1])
+    print(string)
+# inlocuire(string, "King", start_index=int(input('Indexul de pornire: ')), end_index=int(input('Indexul de sfarsit: ')))
 
  
 
